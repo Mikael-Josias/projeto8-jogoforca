@@ -1,9 +1,12 @@
-function App() {
-  return (
-    <div className="App">
-      Olá Mundo!
-    </div>
-  );
-}
+import Game from "./Components/Game";
 
-export default App;
+function App() {
+	return (
+		<div className="App">
+			<Game />
+		</div>
+		);
+	}
+	
+	export default App;
+	
