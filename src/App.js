@@ -1,4 +1,5 @@
 import Game from "./Components/Game";
+import Guess from "./Components/Guess";
 import Keyboard from "./Components/Keyboard";
 
 function App() {
@@ -6,9 +7,9 @@ function App() {
 		<div className="App">
 			<Game />
 			<Keyboard/>
+			<Guess/>
 		</div>
-		);
-	}
-	
-	export default App;
-	
+	);
+}
+
+export default App;
