@@ -1,10 +1,8 @@
 
-.Keyboard__letter{
+.activated .Keyboard__letter, .deactivated .Keyboard__letter{
     font-size: 1.6rem;
     font-weight: 700;
-    color: var(--clr-enabled-letter);
 
-    background-color: var(--clr-bg-enabled-letter);
     border: .1rem solid var(--clr-border-letter);
     border-radius: .3rem;
 
@@ -13,4 +11,16 @@
     width: 4rem;
 
     cursor: pointer;
+}
+
+.activated .Keyboard__letter{
+    color: var(--clr-enabled-letter);
+
+    background-color: var(--clr-bg-enabled-letter);
+}
+
+.deactivated .Keyboard__letter{
+    color: var(--clr-disabled-letter);
+
+    background-color: var(--clr-bg-disabled-letter);
 }
