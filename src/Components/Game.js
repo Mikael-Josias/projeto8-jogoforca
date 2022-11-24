@@ -6,5 +6,4 @@ export default function Game() {
 			<span className="Game__word">_ _ _ _ _ _ _ _ _</span>
 		</div>
 		);
-	}
-	
+}
