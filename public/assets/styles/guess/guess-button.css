@@ -1,0 +1,16 @@
+
+.Guess__button{
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--clr-enabled-letter);
+
+    background-color: var(--clr-bg-enabled-letter);
+    border: .1rem solid var(--clr-border-letter);
+    border-radius: .3rem;
+
+    padding: 0 1.5rem;
+    margin: .6rem;
+    height: 4rem;
+
+    cursor: pointer;
+}
