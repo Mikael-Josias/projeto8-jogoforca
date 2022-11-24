@@ -1,0 +1,9 @@
+
+.Game__hangman{
+    position: absolute;
+    top: 5.9rem;
+    left: 0;
+    
+    height: auto;
+    width: 40rem;
+}

@@ -1,0 +1,18 @@
+
+.Game__start{
+    position: absolute;
+    top: 8.9rem;
+    right: 0;
+
+    font-size: 2rem;
+    color: white;
+
+    background-color: var(--clr-green);
+    border: none;
+    border-radius: .8rem;
+
+    width: 20rem;
+    height: 6rem;
+
+    cursor: pointer;
+}

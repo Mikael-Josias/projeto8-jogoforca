@@ -1,0 +1,9 @@
+
+.Game__word{
+    position: absolute;
+    top: 43.1rem;
+    right: 0;
+
+    font-size: 5rem;
+    font-weight: 700;
+}
