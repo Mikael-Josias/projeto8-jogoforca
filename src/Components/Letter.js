@@ -1,12 +1,12 @@
-export default function Letter({letter, disabled}) {
+// export default function Letter({letter, disabled}) {
 
-    function ola(){
-        console.log("ola");
-    }
+//     function ola(){
+//         console.log("ola");
+//     }
 
-    return (
-        <>
-            <button className="Keyboard__letter" value={letter} disabled={disabled} onClick={ola} >{letter}</button>
-        </>
-    );
-}
+//     return (
+//         <>
+//             <button className="Keyboard__letter" value={letter} disabled={disabled} onClick={ola} >{letter}</button>
+//         </>
+//     );
+// }
