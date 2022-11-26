@@ -11,7 +11,6 @@ export default function App() {
 	const [selectedLetters, setSelectedLetters] = useState([]);
 	const [numErrors, setNumErrors] = useState(0);
 
-	console.log(selectedLetters);
 	return (
 		<>
 			<div className="App">
@@ -29,7 +28,11 @@ export default function App() {
 					selectedLetters={{selectedLetters, setSelectedLetters}}
 					errors={{numErrors, setNumErrors}} />
 
-				<Guess isPlaying={isPlaying} />
+				<Guess 
+					playing={{isPlaying, setIsPlaying}}
+					word={word}
+					setFormattedWord={setFormattedWord}
+					setNumErrors={setNumErrors} />
 			</div>
 		</>
 	);

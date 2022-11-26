@@ -13,7 +13,7 @@ export default function Game({playing, setWord, formattedWord, setSelectedLetter
 	function getWord(){
 		let newWord = palavras[Math.floor(Math.random() * palavras.length)];
 		let formattedNewWord = formatWordToSecret(newWord);
-
+		console.log(newWord);
 		setWord(newWord.toUpperCase());
 		formattedWord.setFormattedWord(formattedNewWord);
 	}
