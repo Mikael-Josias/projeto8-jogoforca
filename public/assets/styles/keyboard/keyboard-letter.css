@@ -1,5 +1,5 @@
 
-.activated .Keyboard__letter, .deactivated .Keyboard__letter{
+.Keyboard__letter{
     font-size: 1.6rem;
     font-weight: 700;
 
@@ -13,13 +13,13 @@
     cursor: pointer;
 }
 
-.activated .Keyboard__letter{
+.activated{
     color: var(--clr-enabled-letter);
 
     background-color: var(--clr-bg-enabled-letter);
 }
 
-.deactivated .Keyboard__letter{
+.deactivated{
     color: var(--clr-disabled-letter);
 
     background-color: var(--clr-bg-disabled-letter);

@@ -1,21 +1,31 @@
 import { useState } from "react";
 import Game from "./Components/Game";
-import Guess from "./Components/Guess";
 import Keyboard from "./Components/Keyboard";
 
-function App() {
+export default function App() {
 
-	let [word, setWord] = useState("");
-	let [secretWord, setSecretWord] = useState("");
-	let [pressedKeys, setPressedKeys] = useState([]);
+	let [isPlaying, setIsPlaying] = useState(false);
+	let [word, setWord] = useState('');
+	let [formattedWord, setFormattedWord] = useState('');
+	let [selectedLetters, setSelectedLetters] = useState('');
+	let [numErrors, setNumErrors] = useState(0);
 
 	return (
-		<div className="App">
-			<Game word={{word, setWord}} secretWord={{secretWord, setSecretWord}} pressedKeys={{pressedKeys, setPressedKeys}}/>
-			{/* <Keyboard word={word}/> */}
-			{/* <Guess/> */}
-		</div>
+		<>
+			<div className="App">
+				<Game
+					playing={{isPlaying, setIsPlaying}}
+					setWord={setWord}
+					formattedWord={{formattedWord, setFormattedWord}}
+					setErrors={setNumErrors} />
+
+				<Keyboard 
+					isPlaying={isPlaying}
+					word={word}
+					setFormattedWord={setFormattedWord}
+					selectedLetters={{selectedLetters, setSelectedLetters}}
+					erros={{numErrors, setNumErrors}} />
+			</div>
+		</>
 	);
 }
-
-export default App;
