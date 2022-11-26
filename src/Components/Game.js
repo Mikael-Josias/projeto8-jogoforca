@@ -1,11 +1,11 @@
 import palavras from "../palavras";
 import { formatWordToSecret } from "../Utils";
 
-export default function Game({playing, setWord, formattedWord, setErrors}){
+export default function Game({playing, setWord, formattedWord, errors}){
 
 	function startGame(event){
 		getWord();
-		setErrors(0);
+		errors.setNumErrors(0);
 		playing.setIsPlaying(true);
 	}
 
@@ -21,9 +21,10 @@ export default function Game({playing, setWord, formattedWord, setErrors}){
 		<>
 			<div className="Game">
 				<button className="Game__start" onClick={e => startGame(e)} >Escolher Palavra</button>
-				<img className="Game__hangman" src="./assets/imgs/forca0.png" />
+				<img className="Game__hangman" src={`./assets/imgs/forca${errors.numErrors}.png`} />
 				<span className="Game__word">{formattedWord.formattedWord}</span>
 			</div>
 		</>
 	);
 }
+

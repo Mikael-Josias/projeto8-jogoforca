@@ -22,3 +22,7 @@ export const formatWordToSecret = (word, letters = []) =>{
 
     return secretWord;
 };
+
+export const lostGame = (setIsPlaying) =>{
+    setIsPlaying(false);
+}

@@ -1,27 +1,47 @@
 import { useState } from "react";
-import { formatWordToSecret } from "../Utils";
+import { formatWordToSecret, lostGame } from "../Utils";
 
-export default function Letter({value, isPlaying, word, setFormattedWord, selectedLetters, erros}){
+export default function Letter({value, playing, word, setFormattedWord, selectedLetters, errors}){
     
-    let [clicked, setClicked] = useState(false);
+    let clicked = false;
+    const selLetters = [...selectedLetters.selectedLetters];
+
+    selLetters.forEach((sl) => {
+        if (value === sl) {
+            clicked = true;
+            console.log(true)
+        }
+    });
+
 
     function clickLetter(e){
-        let arr = [...selectedLetters.selectedLetters, e.target.value];
-        selectedLetters.setSelectedLetters(arr);
+        selLetters.push(e.target.value);
+        selectedLetters.setSelectedLetters(selLetters);
+        verifyError(e.target.value);
 
-        let formattedWord = formatWordToSecret(word, arr);
+        let formattedWord = formatWordToSecret(word, selLetters);
         setFormattedWord(formattedWord);
+    }
 
-        setClicked(true);
+    function verifyError(letter){
+        if (!word.includes(letter)) {
+            let num = errors.numErrors + 1;
+            console.log(num)
+            errors.setNumErrors(num);
+
+            if (num == 6) {
+                lostGame(playing.setIsPlaying);
+            }
+        }
     }
     
     return (
         <>
             <button 
-                className={(isPlaying === true && clicked === false)? "activated Keyboard__letter" : "deactivated Keyboard__letter"} 
+                className={(playing.isPlaying === true && clicked === false)? "activated Keyboard__letter" : "deactivated Keyboard__letter"} 
                 value={value}
                 onClick={(e) => clickLetter(e)}
-                disabled={!(isPlaying === true && clicked === false)} >{value}</button>
+                disabled={!(playing.isPlaying === true && clicked === false)} >{value}</button>
         </>
     );
 }

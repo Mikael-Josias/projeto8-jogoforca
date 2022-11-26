@@ -4,12 +4,12 @@ import Keyboard from "./Components/Keyboard";
 
 export default function App() {
 
-	let [isPlaying, setIsPlaying] = useState(false);
-	let [word, setWord] = useState('');
-	let [formattedWord, setFormattedWord] = useState('');
-	let [selectedLetters, setSelectedLetters] = useState('');
-	let [numErrors, setNumErrors] = useState(0);
-
+	const [isPlaying, setIsPlaying] = useState(false);
+	const [word, setWord] = useState('');
+	const [formattedWord, setFormattedWord] = useState('');
+	const [selectedLetters, setSelectedLetters] = useState([]);
+	const [numErrors, setNumErrors] = useState(0);
+	console.log(selectedLetters);
 	return (
 		<>
 			<div className="App">
@@ -17,14 +17,14 @@ export default function App() {
 					playing={{isPlaying, setIsPlaying}}
 					setWord={setWord}
 					formattedWord={{formattedWord, setFormattedWord}}
-					setErrors={setNumErrors} />
+					errors={{numErrors, setNumErrors}} />
 
 				<Keyboard 
-					isPlaying={isPlaying}
+				playing={{isPlaying, setIsPlaying}}
 					word={word}
 					setFormattedWord={setFormattedWord}
 					selectedLetters={{selectedLetters, setSelectedLetters}}
-					erros={{numErrors, setNumErrors}} />
+					errors={{numErrors, setNumErrors}} />
 			</div>
 		</>
 	);
