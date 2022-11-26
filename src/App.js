@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Game from "./Components/Game";
 import Keyboard from "./Components/Keyboard";
+import Guess from "./Components/Guess";
 
 export default function App() {
 
@@ -9,6 +10,7 @@ export default function App() {
 	const [formattedWord, setFormattedWord] = useState('');
 	const [selectedLetters, setSelectedLetters] = useState([]);
 	const [numErrors, setNumErrors] = useState(0);
+
 	console.log(selectedLetters);
 	return (
 		<>
@@ -26,6 +28,8 @@ export default function App() {
 					setFormattedWord={setFormattedWord}
 					selectedLetters={{selectedLetters, setSelectedLetters}}
 					errors={{numErrors, setNumErrors}} />
+
+				<Guess isPlaying={isPlaying} />
 			</div>
 		</>
 	);
