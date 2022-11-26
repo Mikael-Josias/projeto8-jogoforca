@@ -1,11 +1,12 @@
 import palavras from "../palavras";
 import { formatWordToSecret } from "../Utils";
 
-export default function Game({playing, setWord, formattedWord, errors}){
+export default function Game({playing, setWord, formattedWord, setSelectedLetters, errors}){
 
 	function startGame(event){
 		getWord();
 		errors.setNumErrors(0);
+		setSelectedLetters([]);
 		playing.setIsPlaying(true);
 	}
 

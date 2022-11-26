@@ -17,6 +17,7 @@ export default function App() {
 					playing={{isPlaying, setIsPlaying}}
 					setWord={setWord}
 					formattedWord={{formattedWord, setFormattedWord}}
+					setSelectedLetters={setSelectedLetters}
 					errors={{numErrors, setNumErrors}} />
 
 				<Keyboard 
