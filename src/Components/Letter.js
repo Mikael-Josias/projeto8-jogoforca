@@ -21,6 +21,11 @@ export default function Letter({value, playing, word, setFormattedWord, selected
 
         let formattedWord = formatWordToSecret(word, selLetters);
         setFormattedWord(formattedWord);
+
+        if (compareWords(formattedWord)) {
+            lostGame(playing.setIsPlaying);
+            setGameResult("winner");
+        }
     }
 
     function verifyError(letter){
@@ -36,6 +41,16 @@ export default function Letter({value, playing, word, setFormattedWord, selected
             }
             
         }
+    }
+
+    function compareWords(formattedWord){
+        for (let i = 0; i < formattedWord.length; i++) {
+            if (formattedWord[i] !== word[i]) {
+                return false;
+            }
+        }
+
+        return true;
     }
     
     return (

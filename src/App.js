@@ -29,7 +29,6 @@ export default function App() {
 					setFormattedWord={setFormattedWord}
 					selectedLetters={{selectedLetters, setSelectedLetters}}
 					errors={{numErrors, setNumErrors}}
-					setGameResult={setGameResult}
 					setGameResult={setGameResult} />
 
 				<Guess 
