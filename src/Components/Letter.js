@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { formatWordToSecret, lostGame } from "../Utils";
 
-export default function Letter({value, playing, word, setFormattedWord, selectedLetters, errors}){
+export default function Letter({value, playing, word, setFormattedWord, selectedLetters, errors, setGameResult}){
     
     let clicked = false;
     const selLetters = [...selectedLetters.selectedLetters];
@@ -31,7 +31,10 @@ export default function Letter({value, playing, word, setFormattedWord, selected
 
             if (num == 6) {
                 lostGame(playing.setIsPlaying);
+                setFormattedWord(formatWordToSecret(word, word.split("")));
+                setGameResult("lostit");
             }
+            
         }
     }
     

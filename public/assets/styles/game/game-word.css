@@ -7,3 +7,11 @@
     font-size: 5rem;
     font-weight: 700;
 }
+
+.lostit{
+    color: var(--clr-red);
+}
+
+.winner{
+    color: var(--clr-green);
+}

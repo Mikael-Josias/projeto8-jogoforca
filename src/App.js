@@ -10,6 +10,7 @@ export default function App() {
 	const [formattedWord, setFormattedWord] = useState('');
 	const [selectedLetters, setSelectedLetters] = useState([]);
 	const [numErrors, setNumErrors] = useState(0);
+	const [gameResult, setGameResult] = useState('');
 
 	return (
 		<>
@@ -19,20 +20,24 @@ export default function App() {
 					setWord={setWord}
 					formattedWord={{formattedWord, setFormattedWord}}
 					setSelectedLetters={setSelectedLetters}
-					errors={{numErrors, setNumErrors}} />
+					errors={{numErrors, setNumErrors}}
+					gameResult={{gameResult, setGameResult}} />
 
 				<Keyboard 
 				playing={{isPlaying, setIsPlaying}}
 					word={word}
 					setFormattedWord={setFormattedWord}
 					selectedLetters={{selectedLetters, setSelectedLetters}}
-					errors={{numErrors, setNumErrors}} />
+					errors={{numErrors, setNumErrors}}
+					setGameResult={setGameResult}
+					setGameResult={setGameResult} />
 
 				<Guess 
 					playing={{isPlaying, setIsPlaying}}
 					word={word}
 					setFormattedWord={setFormattedWord}
-					setNumErrors={setNumErrors} />
+					setNumErrors={setNumErrors}
+					setGameResult={setGameResult} />
 			</div>
 		</>
 	);

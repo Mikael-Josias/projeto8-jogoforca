@@ -1,17 +1,21 @@
 import { useState } from "react";
 import { formatWordToSecret, lostGame } from "../Utils";
 
-export default function Guess({playing, word, setFormattedWord, setNumErrors}){
+export default function Guess({playing, word, setFormattedWord, setNumErrors, setGameResult}){
 
     const [inputValue, setInputValue] = useState('');
 
     function compareWord(e){
         if (inputValue.toUpperCase() === word) {
-            console.log("oi")
+            setNumErrors(0);
+            lostGame(playing.setIsPlaying);
+            setFormattedWord(formatWordToSecret(word, word.split("")));
+            setGameResult("winner");
         }else{
             setNumErrors(6);
             lostGame(playing.setIsPlaying);
             setFormattedWord(formatWordToSecret(word, word.split("")));
+            setGameResult("lostit");
         }
     }
 
