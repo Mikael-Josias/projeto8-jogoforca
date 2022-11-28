@@ -1,7 +1,7 @@
 import palavras from "../palavras";
 import { formatWordToSecret } from "../Utils";
 
-export default function Game({playing, setWord, formattedWord, setSelectedLetters, errors, gameResult}){
+export default function Game({playing, word, formattedWord, setSelectedLetters, errors, gameResult}){
 
 	function startGame(event){
 		getWord();
@@ -15,16 +15,16 @@ export default function Game({playing, setWord, formattedWord, setSelectedLetter
 		let newWord = palavras[Math.floor(Math.random() * palavras.length)];
 		let formattedNewWord = formatWordToSecret(newWord);
 		console.log(newWord);
-		setWord(newWord.toUpperCase());
+		word.setWord(newWord.toUpperCase());
 		formattedWord.setFormattedWord(formattedNewWord);
 	}
 
 	return (
 		<>
 			<div className="Game">
-				<button className="Game__start" onClick={e => startGame(e)} >Escolher Palavra</button>
-				<img className="Game__hangman" src={`./assets/imgs/forca${errors.numErrors}.png`} />
-				<span className={`Game__word ${gameResult.gameResult}`}>{formattedWord.formattedWord}</span>
+				<button className="Game__start" onClick={e => startGame(e)} data-test="choose-word" >Escolher Palavra</button>
+				<img className="Game__hangman" src={`./assets/imgs/forca${errors.numErrors}.png`} data-test="game-image" />
+				<span className={`Game__word ${gameResult.gameResult}`} data-test="word" data-answer={word.word} >{formattedWord.formattedWord}</span>
 			</div>
 		</>
 	);

@@ -27,11 +27,13 @@ export default function Guess({playing, word, setFormattedWord, setNumErrors, se
                     type="text" 
                     className="Guess__input"
                     disabled={!playing.isPlaying}
-                    onChange={(e) => {setInputValue(e.target.value)}} />
+                    onChange={(e) => {setInputValue(e.target.value)}}
+                    data-test="guess-input" />
                 <button 
                     className="Guess__button" 
                     disabled={!playing.isPlaying}
-                    onClick={(e)=>{compareWord(e)}} >Chutar</button>
+                    onClick={(e)=>{compareWord(e)}}
+                    data-test="guess-button" >Chutar</button>
             </div>
         </>
     );

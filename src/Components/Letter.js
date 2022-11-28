@@ -59,7 +59,8 @@ export default function Letter({value, playing, word, setFormattedWord, selected
                 className={(playing.isPlaying === true && clicked === false)? "activated Keyboard__letter" : "deactivated Keyboard__letter"} 
                 value={value}
                 onClick={(e) => clickLetter(e)}
-                disabled={!(playing.isPlaying === true && clicked === false)} >{value}</button>
+                disabled={!(playing.isPlaying === true && clicked === false)}
+                data-test="letter" >{value}</button>
         </>
     );
 }

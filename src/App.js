@@ -17,7 +17,7 @@ export default function App() {
 			<div className="App">
 				<Game
 					playing={{isPlaying, setIsPlaying}}
-					setWord={setWord}
+					word={{word, setWord}}
 					formattedWord={{formattedWord, setFormattedWord}}
 					setSelectedLetters={setSelectedLetters}
 					errors={{numErrors, setNumErrors}}
