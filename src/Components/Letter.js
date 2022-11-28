@@ -17,10 +17,11 @@ export default function Letter({value, playing, word, setFormattedWord, selected
     function clickLetter(e){
         selLetters.push(e.target.value);
         selectedLetters.setSelectedLetters(selLetters);
-        verifyError(e.target.value);
 
         let formattedWord = formatWordToSecret(word, selLetters);
         setFormattedWord(formattedWord);
+
+        verifyError(e.target.value);
 
         if (compareWords(formattedWord)) {
             lostGame(playing.setIsPlaying);
